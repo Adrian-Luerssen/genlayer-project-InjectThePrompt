@@ -1,7 +1,7 @@
 <template>
   <Suspense>
     <template #default>
-      <BetsScreen />
+      <PromptInjectionTest />
     </template>
     <template #fallback>
       <div class="flex items-center justify-center h-screen">
@@ -13,4 +13,5 @@
 
 <script setup>
 import BetsScreen from "./components/BetsScreen.vue";
+import PromptInjectionTest from "./components/PromptInjectionTest.vue";
 </script>
