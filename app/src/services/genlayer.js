@@ -9,7 +9,12 @@ export const account = accountPrivateKey ? createGenLayerAccount(accountPrivateK
 export const createAccount = () => {
   const newAccountPrivateKey = generatePrivateKey();
   localStorage.setItem("accountPrivateKey", newAccountPrivateKey);
-  return createGenLayerAccount(newAccountPrivateKey);
+  const newAccount = createGenLayerAccount(newAccountPrivateKey);
+
+  // Update the exported account
+  Object.assign(account || {}, newAccount);
+
+  return newAccount;
 };
 
 export const removeAccount = () => {
